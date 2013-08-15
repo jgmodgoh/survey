@@ -1,0 +1,23 @@
+<h2>
+  Questions
+</h2>
+<hr/>
+<h4>
+  <%= link_to "Create New Question", new_question_group_question_path(@question_group) %>
+</h4>
+
+<table class="table table-striped table-hover">
+  <colgroup>
+    <col>
+    <col width="250">
+  </colgroup>
+  <thead>
+    <tr>
+      <th><%= "No questions yet" if @question_group.questions.empty? %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "question", collection: @questions %>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h2 class="text-left">
+  Collection of Sample Surveys 
+</h2>
+<hr/>
+<h4 class="pull-right">
+  <% if can_administer? %>
+    <%= link_to "Create New Survey", new_question_group_path %>
+  <% end %>
+</h4>
+<table class="table table-striped table-hover">
+  <colgroup>
+    <col>
+    <col width="250">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>List of Surveys</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "question_group", collection: @question_groups %>
+  </tbody>
+</table>

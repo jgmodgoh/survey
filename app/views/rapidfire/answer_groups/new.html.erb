@@ -1,0 +1,21 @@
+<h2>Please answer these Questions</h2>
+<hr/>
+
+<table class="table table-striped table-bordered">
+
+
+    <ol>
+      <%= form_for([@question_group, @answer_group_builder]) do |f| %>
+        <%- @answer_group_builder.answers.each do |answer| %>
+          <li>
+          <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+            <%= render_answer_form_helper(answer, answer_form) %>
+          <% end %>
+          </li><br><br><br>
+        <% end %>
+        <%= f.submit "Save" %>
+      <% end %>
+    </ol>
+
+
+</table>

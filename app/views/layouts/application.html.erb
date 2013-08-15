@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample Online Survey</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='row'>
+    <div class='span10 offset2 pagination-centered'>
+      <ul class="nav nav-pills pull-right">
+        <li class="inactive"><%= link_to "Home", root_path %></li>
+        <li class="inactive"><%= link_to "Login", main_app.new_user_session_path %></li>
+        <li class="inactive"><%= link_to "Sign up", main_app.new_user_registration_path %></li>
+      </ul>
+      <%= yield %>
+
+    </div>
+  </div>
+
+</body>
+</html>
